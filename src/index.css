@@ -102,4 +102,123 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Theme enhancements and tokens override */
+@layer base {
+  :root {
+    /* Neutral canvas with emerald brand */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Brand: emerald */
+    --primary: 160 84% 39%; /* emerald */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 160 60% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar (not used yet but themed) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 160 24% 92%;
+    --sidebar-accent-foreground: 160 84% 18%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 160 84% 39%;
+
+    /* Extra tokens */
+    --primary-variant: 160 70% 48%;
+    --primary-glow: 160 90% 60%;
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -12px hsl(var(--primary) / 0.35);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 160 70% 45%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 160 60% 35%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 160 70% 45%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 160 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 160 70% 45%;
+
+    --primary-variant: 160 60% 50%;
+    --primary-glow: 160 80% 60%;
+    --shadow-elegant: 0 10px 30px -12px hsl(var(--primary) / 0.45);
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero {
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary-variant)) 100%
+    );
+  }
+  .glass {
+    background-color: hsl(var(--background) / 0.7);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
 }
