@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="border-t">
@@ -8,6 +11,9 @@ const Footer = () => {
             <a href="tel:+212612345678" aria-label="Téléphone">+212 6 12 34 56 78</a>
             <a href="mailto:contact@smilezen.ma" aria-label="Email">contact@smilezen.ma</a>
             <a href="https://maps.google.com/?q=Bd.+d'Anfa,+Casablanca" target="_blank" rel="noreferrer">Voir sur Google Maps</a>
+            <Button asChild size="sm" variant="outline">
+              <Link to="/admin/login" aria-label="Espace administrateur">Espace admin</Link>
+            </Button>
           </div>
         </div>
       </div>
